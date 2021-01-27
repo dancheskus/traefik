@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  traefik:
+    container_name: traefik
+    image: traefik:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/etc/traefik
+    environment:
+      CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN}
+
+networks:
+  default:
+    external: 
+      name: traefik

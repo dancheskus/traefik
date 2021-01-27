@@ -1,0 +1,27 @@
+# log:
+#   level: DEBUG
+
+providers:
+  docker: true
+  file:
+    filename: /etc/traefik/dynamic_conf.yml
+
+entrypoints:
+  web:
+    address: :80
+    http:
+      redirections:
+        entrypoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: :443
+
+certificatesresolvers:
+  myresolver:
+    acme:
+      # caserver: "https://acme-staging-v02.api.letsencrypt.org/directory"
+      dnsChallenge:
+        provider: cloudflare
+      email: dancheskus@gmail.com
+      storage: /etc/traefik/acme.json
