@@ -11,3 +11,8 @@ http:
       tls: true
       service: noop@internal
       middlewares: www-remover
+
+tls:
+  options:
+    default:
+      sniStrict: true

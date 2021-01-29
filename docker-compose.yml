@@ -1,9 +1,8 @@
-version: '3'
-
 services:
   traefik:
     container_name: traefik
     image: traefik:latest
+    restart: always
     ports:
       - 80:80
       - 443:443
@@ -15,5 +14,5 @@ services:
 
 networks:
   default:
-    external: 
+    external:
       name: traefik
