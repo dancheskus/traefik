@@ -22,6 +22,6 @@ certificatesresolvers:
     acme:
       # caserver: "https://acme-staging-v02.api.letsencrypt.org/directory"
       dnsChallenge:
-        provider: cloudflare
-      email: dancheskus@gmail.com
+        provider: cloudflare # replace this with your dns provider https://doc.traefik.io/traefik/https/acme/
+      email: # write your emai address here
       storage: /etc/traefik/acme.json

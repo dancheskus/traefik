@@ -11,6 +11,7 @@ services:
       - ./:/etc/traefik
     environment:
       CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN}
+      # find correct ENV setup for your DNS provider here: https://doc.traefik.io/traefik/https/acme/
 
 networks:
   default:
